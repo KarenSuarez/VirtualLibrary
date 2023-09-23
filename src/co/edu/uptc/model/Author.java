@@ -20,6 +20,6 @@ public class Author {
 	}
 
 	public String getBiography() {
-			return biography;
+		return biography;
 	}
 }
