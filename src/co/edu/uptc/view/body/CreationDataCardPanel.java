@@ -6,7 +6,10 @@ import java.awt.GridBagLayout;
 import java.awt.GridLayout;
 import java.awt.Insets;
 
+<<<<<<< HEAD
+=======
 import javax.swing.JComboBox;
+>>>>>>> main
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSeparator;

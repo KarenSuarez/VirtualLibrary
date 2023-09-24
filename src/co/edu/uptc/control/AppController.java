@@ -3,15 +3,17 @@ package co.edu.uptc.control;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import co.edu.uptc.model.ApplicationFunctions;
 import co.edu.uptc.view.PrincipalFrame;
 
 public class AppController implements ActionListener {
 
 	private PrincipalFrame frontend;
-//  private Library backend;
+	private ApplicationFunctions backend;
 
 	public AppController() {
 		frontend = new PrincipalFrame(this);
+		backend = new ApplicationFunctions();
 	}
 
 	public PrincipalFrame getFrontend() {
@@ -26,6 +28,7 @@ public class AppController implements ActionListener {
 			break;
 		case C_DELETE_BOOK:
 			frontend.openDeleteBookPanel();
+			
 			break;
 		case C_DELETE_BOOK_ACTION:
 			// frontend.updateTableBooks();
