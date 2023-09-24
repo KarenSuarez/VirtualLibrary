@@ -30,6 +30,9 @@ public class AppController implements ActionListener {
 		case C_DELETE_BOOK_ACTION:
 			// frontend.updateTableBooks();
 			break;
+		 case C_SEARCH_BOOK:
+			 frontend.searchBooks();
+	        break;
 		default:
 			break;
 

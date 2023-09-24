@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
@@ -22,13 +23,15 @@ public class CreationCardPanel extends JPanel {
 	private CreationDataCardPanel creationDataCardPanel;
 	private JButton saveInfo;
 
-	public CreationCardPanel(String titleText, JTextField titleBook, String titleBookText, JTextField ISBNCode, String ISBNCodeText,
-			JTextField volume, String volumeText, JTextField editorial, String editorialText, JTextField nameAuthor,
-			String nameAuthorText, JTextField lastNameAuthor, String lastNameAuthorText, JTextField biographyAuthor,
-			String biographyAuthorText, String titleDataBookText, String titleDataAuthorText, JButton save) {
+	public CreationCardPanel(String titleText, JTextField titleBook, String titleBookText, JTextField ISBNCode,
+			String ISBNCodeText, JTextField volume, String volumeText, JTextField editorial, String editorialText,
+			JTextField nameAuthor, String nameAuthorText, JTextField lastNameAuthor, String lastNameAuthorText,
+			JTextField biographyAuthor, String biographyAuthorText, String titleDataBookText,
+			String titleDataAuthorText, String titleDataSiteText, String siteText, String campusText,
+			JComboBox<String> siteBox, JComboBox<String> campusBox, JButton save) {
 		this.setBackground(Color.LIGHT_GRAY);
 		RoundedPanel roundedPanel = new RoundedPanel(ColorConstants.LIGHT_BROWN, 30);
-		roundedPanel.setPreferredSize(new Dimension(800, 400));
+		roundedPanel.setPreferredSize(new Dimension(800, 520));
 		roundedPanel.setLayout(new BorderLayout());
 
 		title = new JLabel(titleText);
@@ -39,7 +42,8 @@ public class CreationCardPanel extends JPanel {
 
 		creationDataCardPanel = new CreationDataCardPanel(titleBook, titleBookText, ISBNCode, ISBNCodeText, volume,
 				volumeText, editorial, editorialText, nameAuthor, nameAuthorText, lastNameAuthor, lastNameAuthorText,
-				biographyAuthor, biographyAuthorText, titleDataBookText, titleDataAuthorText);
+				biographyAuthor, biographyAuthorText, titleDataBookText, titleDataAuthorText, titleDataSiteText,
+				siteText, campusText, siteBox, campusBox);
 		roundedPanel.add(creationDataCardPanel, BorderLayout.CENTER);
 
 		this.saveInfo = save;
