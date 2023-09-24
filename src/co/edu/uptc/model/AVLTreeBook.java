@@ -1,10 +1,18 @@
 package co.edu.uptc.model;
 
+import java.util.ArrayList;
+
 public class AVLTreeBook {
 
 	private Node root;
 	private String searchTitle;
 	private Book assistantBook = null;
+
+	private ArrayList<Book> arrayBooks;
+
+	public AVLTreeBook() {
+		arrayBooks = new ArrayList<Book>();
+	}
 
 	private int calculateBalanceFactor(Node node) {
 		if (node == null) {
@@ -192,6 +200,23 @@ public class AVLTreeBook {
 		return assistantBook;
 	}
 
+	public ArrayList<Book> recorridoInordenArray() {
+		recorridoInordenRecArray(root);
+		return arrayBooks;
+	}
+
+	public void recorridoInordenRecArray(Node node) {
+		if (node != null) {
+			arrayBooks.add(node.getBook());
+			recorridoInordenRecArray(node.getLeftSon());
+			recorridoInordenRecArray(node.getRightSon());
+		}
+	}
+
+	public void clearArray() {
+		arrayBooks.clear();
+	}
+
 	public void recorridoInordenRec(Node nodo) {
 		if (nodo != null) {
 			if (nodo.getBook().getTitle().equals(searchTitle)) {
@@ -200,6 +225,27 @@ public class AVLTreeBook {
 			recorridoInordenRec(nodo.getLeftSon());
 			recorridoInordenRec(nodo.getRightSon());
 		}
+	}
+	
+	public static void main(String[] args) {
+		AVLTreeBook a = new AVLTreeBook();
+		a.addBook(new Book("x",1,1,"x",new Author("x","x","x"),new Side("x",new Campus("x")),1));
+		a.addBook(new Book("d",2,1,"d",new Author("d","d","d"),new Side("d",new Campus("d")),1));
+		
+		System.out.println("sasdzxc");
+		
+		Book b = new Book("d",2,1,"d",new Author("d","d","d"),new Side("d",new Campus("d")),1);
+		System.out.println(a.searchBookWithISBN(b));
+		System.out.println(a.searchBookWithTitle("d"));
+		
+		ArrayList <Book> xd = new ArrayList <Book>();
+		xd = a.recorridoInordenArray();
+		
+		for (Book book : xd) {
+			System.out.println(book);
+		}
+		
+
 	}
 
 }
