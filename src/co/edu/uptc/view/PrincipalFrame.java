@@ -17,7 +17,6 @@ public class PrincipalFrame extends JFrame {
 
 	private BannerPanel bannerPanel;
 	private BodyPanel bodyPanel;
-//	private FooterPanel footerPanel;
 
 	public PrincipalFrame(ActionListener actionListener) {
 		super("Gestión de libros");
@@ -46,6 +45,10 @@ public class PrincipalFrame extends JFrame {
 
 	public void updateTableBooks() {
 		bodyPanel.updateTableBooks();
+	}
+	
+	public void searchBooks() {
+		bodyPanel.searchBooks();
 	}
 
 	public int getDeleteActionCodeProduct() {

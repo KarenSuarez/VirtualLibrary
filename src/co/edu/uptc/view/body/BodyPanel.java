@@ -46,6 +46,10 @@ public class BodyPanel extends JPanel implements ActionListener {
 		bookPanel.updateTable();
 	}
 
+	public void searchBooks() {
+		bookPanel.searchBooks();
+	}
+
 	public int getDeleteActionCodeProduct() {
 		return bookPanel.getDeleteActionCode();
 	}
